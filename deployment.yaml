@@ -16,4 +16,4 @@ spec:
       - name: devops
         image: kesariakshitha/devops-demo
         ports:
-        - containerPort: 8081
+        - containerPort: 80

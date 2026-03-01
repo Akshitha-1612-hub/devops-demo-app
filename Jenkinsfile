@@ -5,7 +5,7 @@ pipeline {
 
         stage('Build Docker Image') {
             steps {
-                sh 'docker build -t akshitha/devops-demo-app .'
+                sh 'docker build -t kesariakshitha/devops-demo-app .'
             }
         }
 
@@ -14,7 +14,7 @@ pipeline {
                 withCredentials([usernamePassword(credentialsId: 'docker-pass', usernameVariable: 'USER', passwordVariable: 'PASS')]) {
                     sh '''
                     echo $PASS | docker login -u $USER --password-stdin
-                    docker push akshitha/devops-demo-app
+                    docker push kesariakshitha/devops-demo-app
                     '''
                 }
             }

@@ -5,7 +5,7 @@ pipeline {
 
         stage('Clone Repo') {
             steps {
-                git 'https://github.com/Akshitha-1612-hub/devops-demo-app'
+                git 'https://github.com/Akshitha-1612-hub/devops-demo.git'
             }
         }
 

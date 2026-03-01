@@ -3,15 +3,9 @@ pipeline {
 
     stages {
 
-        stage('Clone Repo') {
-            steps {
-                git 'https://github.com/Akshitha-1612-hub/devops-demo.git'
-            }
-        }
-
         stage('Build Docker Image') {
             steps {
-                sh 'docker build -t akshitha/devops-demo .'
+                sh 'docker build -t akshitha/devops-demo-app .'
             }
         }
 
@@ -20,7 +14,7 @@ pipeline {
                 withCredentials([usernamePassword(credentialsId: 'docker-pass', usernameVariable: 'USER', passwordVariable: 'PASS')]) {
                     sh '''
                     echo $PASS | docker login -u $USER --password-stdin
-                    docker push akshitha/devops-demo
+                    docker push akshitha/devops-demo-app
                     '''
                 }
             }
@@ -34,3 +28,36 @@ pipeline {
         }
     }
 }
+    
+
+    
+
+        
+            
+                
+            
+        
+
+ 
+            
+                
+           
+       
+
+        
+           
+            
+                    
+                    
+                    
+                    
+                
+            
+        
+
+        
+            
+                
+             
+            
+    
